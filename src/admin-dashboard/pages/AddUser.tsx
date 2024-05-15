@@ -43,7 +43,7 @@ export function AddUser() {
         className="w-96 p-5 bg-slate-700 border-2 border-slate-500 flex flex-col gap-3"
         onSubmit={submit}
       >
-        <h2 className="text-white text-lg font-bold">Create a user</h2>
+        <h2 className="text-white text-lg font-bold">Create a User</h2>
         {error.length ? (
           <div className="border-2 border-red-300 rounded p-4 bg-red-100 text-red-700">
             {error}

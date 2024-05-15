@@ -52,7 +52,7 @@ export function EditUser() {
         onSubmit={submit}
       >
         <h2 className="text-white text-lg font-bold">
-          Edit user {params["username"]}
+          Edit {params["username"]}
         </h2>
         {error.length ? (
           <div className="border-2 border-red-300 rounded p-4 bg-red-100 text-red-700">
