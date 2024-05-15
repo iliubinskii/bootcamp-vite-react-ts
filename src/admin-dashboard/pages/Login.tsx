@@ -20,7 +20,7 @@ export function Login() {
 
     const result = await loginAsAdmin(username, password);
 
-    if (result) navigate("/");
+    if (result) navigate("/dashboard");
     else setError("Invalid username or password");
   };
 
@@ -61,7 +61,7 @@ export function Login() {
         <button
           className={
             username.length && password.length
-              ? "bg-slate-500 text-white py-2 px-4 rounded-md hover:bg-slate-600 focus:outline-none focus:bg-slate-600"
+              ? "bg-slate-500 text-white py-2 px-4 rounded-md hover:bg-slate-400 focus:outline-none focus:bg-slate-600"
               : "bg-slate-500 text-white py-2 px-4 rounded-md opacity-50"
           }
           type="submit"
