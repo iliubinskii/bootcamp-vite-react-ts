@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { db } from "../db";
 
-export function CreateUser() {
+export function AddUser() {
   const navigate = useNavigate();
 
   const [error, setError] = React.useState("");
@@ -14,6 +14,13 @@ export function CreateUser() {
   const [username, setUsername] = React.useState("");
 
   const [password, setPassword] = React.useState("");
+
+  const disabled = !(
+    firstName.length &&
+    lastName.length &&
+    username.length &&
+    password.length
+  );
 
   const submit: React.FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
@@ -80,12 +87,12 @@ export function CreateUser() {
         />
         <button
           className={
-            username.length && password.length
-              ? "bg-slate-500 text-white py-2 px-4 rounded-md hover:bg-slate-400 focus:outline-none focus:bg-slate-600"
-              : "bg-slate-500 text-white py-2 px-4 rounded-md opacity-50"
+            disabled
+              ? "bg-slate-500 text-white py-2 px-4 rounded-md opacity-50"
+              : "bg-slate-500 text-white py-2 px-4 rounded-md hover:bg-slate-400 focus:outline-none focus:bg-slate-600"
           }
           type="submit"
-          disabled={!(username.length && password.length)}
+          disabled={disabled}
         >
           Submit
         </button>

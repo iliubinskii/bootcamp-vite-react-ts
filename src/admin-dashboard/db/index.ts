@@ -9,6 +9,20 @@ export const db = {
 
     return Promise.resolve(true);
   },
+  editUser: (
+    username: string,
+    update: Partial<Omit<User, "admin" | "username">>
+  ) => {
+    const user = users.find((candidate) => candidate.username === username);
+
+    if (user) {
+      Object.assign(user, update);
+
+      return Promise.resolve(true);
+    }
+
+    return Promise.resolve(false);
+  },
   deleteUser: (username: string) => {
     const index = users.findIndex(
       (candidate) => candidate.username !== username

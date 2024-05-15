@@ -33,8 +33,8 @@ export function Dashboard() {
             </div>
             <div>{user.firstName}</div>
             <div>{user.lastName}</div>
-            <div className="flex items-center gap-3">
-              <Link to={`/edit/${user.username}`}>
+            <div className="flex items-center gap-5">
+              <Link to={`/dashboard/${user.username}/edit`}>
                 <FaUserEdit className="text-gray-700" />
               </Link>
               {user.admin ? undefined : (

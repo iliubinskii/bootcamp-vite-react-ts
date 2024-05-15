@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./Layout";
-import { Dashboard, Login, EditUser, CreateUser, Home } from "./pages";
+import { Dashboard, Login, EditUser, AddUser, Home } from "./pages";
 import { AppContextProvider } from "./app-context";
 import AuthGuard from "./auth-guard";
 
@@ -22,13 +22,13 @@ export function AdminDashboard() {
             <Route
               path="/create"
               element={
-                <AuthGuard pageName="Create User">
-                  <CreateUser />
+                <AuthGuard pageName="Add User">
+                  <AddUser />
                 </AuthGuard>
               }
             />
             <Route
-              path="/edit"
+              path="/dashboard/:username/edit"
               element={
                 <AuthGuard pageName="Edit User">
                   <EditUser />
