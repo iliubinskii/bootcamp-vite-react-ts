@@ -25,7 +25,7 @@ export const db = {
   },
   deleteUser: (username: string) => {
     const index = users.findIndex(
-      (candidate) => candidate.username !== username
+      (candidate) => candidate.username === username
     );
 
     if (index === -1) return Promise.resolve(0);
