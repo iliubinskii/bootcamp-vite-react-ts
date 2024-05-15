@@ -13,7 +13,7 @@ export function AdminDashboard() {
             <Route
               index
               element={
-                <AuthGuard pageName="home">
+                <AuthGuard pageName="Admin Dashboard">
                   <Home />
                 </AuthGuard>
               }

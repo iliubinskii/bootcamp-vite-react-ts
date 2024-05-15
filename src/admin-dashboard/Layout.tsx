@@ -6,7 +6,7 @@ export function Layout() {
       <div className="p-4 bg-slate-700 text-lg text-white font-bold">
         <h1 className="uppercase">Admin Dashboard</h1>
       </div>
-      <div className="p-9">
+      <div className="flex-grow p-9 flex flex-col">
         <Outlet />
       </div>
     </div>

@@ -1,17 +1,19 @@
 import React from "react";
 import { AppContext } from "../app-context";
-import { useNavigate } from "react-router";
+import { Navigate } from "react-router";
 
 export default function AuthGuard({ children, pageName }: Props) {
-  const navigate = useNavigate();
-
   const { loggedIn } = React.useContext(AppContext);
 
-  if (loggedIn) return <>{children}</>;
-
-  navigate("/login", {
-    state: { error: `You need to login to access ${pageName} page` },
-  });
+  return loggedIn ? (
+    <>{children}</>
+  ) : (
+    <Navigate
+      to="/login"
+      replace
+      state={{ error: `Log in to access ${pageName} page` }}
+    />
+  );
 }
 
 export interface Props {
