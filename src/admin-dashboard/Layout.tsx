@@ -1,8 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import React from "react";
 import { AppContext } from "./app-context";
-import { IoMdLogOut, IoMdLogIn, IoMdPersonAdd } from "react-icons/io";
-import { MdDashboard } from "react-icons/md";
+import { IoMdLogOut, IoMdLogIn, IoMdPersonAdd, IoMdList } from "react-icons/io";
 
 export function Layout() {
   const { loggedIn, logoff } = React.useContext(AppContext);
@@ -15,8 +14,8 @@ export function Layout() {
         <h1 className="uppercase font-bold">Admin Dashboard</h1>
         {loggedIn ? (
           <div className="flex gap-5 items-center text-slate-300">
-            <Link to="/">
-              <MdDashboard />
+            <Link to="/dashboard">
+              <IoMdList />
             </Link>
             <Link to="/create">
               <IoMdPersonAdd />

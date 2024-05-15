@@ -1,6 +1,14 @@
 import { faker } from "@faker-js/faker";
 
 export const db = {
+  addUser: (user: User) => {
+    if (users.some((candidate) => candidate.username === user.username))
+      return Promise.resolve(false);
+
+    users.push(user);
+
+    return Promise.resolve(true);
+  },
   deleteUser: (username: string) => {
     const index = users.findIndex(
       (candidate) => candidate.username !== username
