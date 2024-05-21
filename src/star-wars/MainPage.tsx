@@ -18,12 +18,19 @@ function MainPage() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col p-5 gap-5">
       <PersonsCatalogue
         people={people}
         imageUrl="https://via.placeholder.com/150"
       />
-      <button onClick={update}>Update</button>
+      <div className="flex justify-center">
+        <button
+          onClick={update}
+          className="bg-yellow-300 text-gray-900 font-bold py-2 px-4 rounded-md hover:bg-yellow-400"
+        >
+          Update
+        </button>
+      </div>
     </div>
   );
 }
