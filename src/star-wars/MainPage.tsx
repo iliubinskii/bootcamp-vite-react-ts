@@ -1,6 +1,6 @@
+import PersonsCatalogue from "./PersonsCatalogue";
 import {
   selectPeople,
-  selectStarShips,
   updatePeople,
   updateStarShips,
   useAppDispatch,
@@ -10,9 +10,7 @@ import {
 function MainPage() {
   const dispatch = useAppDispatch();
 
-  const people = useAppSelector(selectPeople);
-
-  const starShips = useAppSelector(selectStarShips);
+  const people: any = useAppSelector(selectPeople);
 
   const update = () => {
     dispatch(updatePeople());
@@ -21,8 +19,10 @@ function MainPage() {
 
   return (
     <div className="flex flex-col">
-      <div>{JSON.stringify(people)}</div>
-      <div>{JSON.stringify(starShips)}</div>
+      <PersonsCatalogue
+        people={people}
+        imageUrl="https://via.placeholder.com/150"
+      />
       <button onClick={update}>Update</button>
     </div>
   );

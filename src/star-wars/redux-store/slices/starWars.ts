@@ -11,11 +11,11 @@ const starWarsSlice = createSlice({
   initialState,
   name: "starWars",
   reducers: {
-    setPeople: (state, action: PayloadAction<readonly Person[]>) => {
-      state.people = [...action.payload];
+    setPeople: (state, action: PayloadAction<Person[]>) => {
+      state.people = action.payload;
     },
-    setStarShips: (state, action: PayloadAction<readonly StarShip[]>) => {
-      state.starShips = [...action.payload];
+    setStarShips: (state, action: PayloadAction<StarShip[]>) => {
+      state.starShips = action.payload;
     },
   },
 });
