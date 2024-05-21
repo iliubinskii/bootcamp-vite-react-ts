@@ -1,1 +1,1 @@
-export * from "./starShips";
+export * from "./starWars";

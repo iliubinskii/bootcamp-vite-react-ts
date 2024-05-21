@@ -9,12 +9,19 @@ export interface AppThunk<T = void> {
 
 export interface RootState {
   readonly starWars: {
+    readonly people: readonly Person[];
     readonly starShips: readonly StarShip[];
   };
 }
 
+export interface Person {
+  readonly name: string;
+  readonly birthYear: string;
+}
+
 export interface StarShip {
   readonly name: string;
+  readonly model: string;
 }
 
 export type UseAppDispatch = typeof useDispatch<AppDispatch>;
