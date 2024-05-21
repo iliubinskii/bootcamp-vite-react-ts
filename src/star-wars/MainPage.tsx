@@ -12,6 +12,7 @@ function MainPage() {
 
   const people = useAppSelector(selectPeople);
 
+  // TODO: Use useEffect
   const update = () => {
     dispatch(updatePeople());
     dispatch(updateStarShips());
