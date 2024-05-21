@@ -6,12 +6,5 @@ export const updateStarShips: AppThunk = () => async (dispatch) => {
 
   const json = await response.json();
 
-  console.log(json);
-
-  // TODO
-  dispatch(
-    setStarShips([
-      { name: "Millennium Falcon", model: "YT-1300 light freighter" },
-    ])
-  );
+  dispatch(setStarShips(json.results));
 };

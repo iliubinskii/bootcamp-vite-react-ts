@@ -6,8 +6,5 @@ export const updatePeople: AppThunk = () => async (dispatch) => {
 
   const json = await response.json();
 
-  console.log(json);
-
-  // TODO
-  dispatch(setPeople([{ name: "Millennium Falcon", birthYear: "" }]));
+  dispatch(setPeople(json.results));
 };
