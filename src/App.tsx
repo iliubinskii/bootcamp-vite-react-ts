@@ -1,7 +1,7 @@
-import { AdminDashboard } from "./admin-dashboard"
+import StarWarsApp from "./star-wars/StarWarsApp";
 
 function App() {
-  return <AdminDashboard />
+  return <StarWarsApp />;
 }
 
-export default App
+export default App;
