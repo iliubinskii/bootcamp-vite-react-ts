@@ -24,8 +24,8 @@ export const starWarsReducer = starWarsSlice.reducer;
 
 export const { setPeople, setStarShips } = starWarsSlice.actions;
 
-export const selectPeople = (state: RootState): readonly Person[] =>
+export const selectPeople = (state: RootState): Person[] =>
   state.starWars.people;
 
-export const selectStarShips = (state: RootState): readonly StarShip[] =>
+export const selectStarShips = (state: RootState): StarShip[] =>
   state.starWars.starShips;

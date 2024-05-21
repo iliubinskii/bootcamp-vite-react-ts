@@ -10,7 +10,7 @@ import {
 function MainPage() {
   const dispatch = useAppDispatch();
 
-  const people: any = useAppSelector(selectPeople);
+  const people = useAppSelector(selectPeople);
 
   const update = () => {
     dispatch(updatePeople());

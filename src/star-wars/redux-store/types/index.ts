@@ -1,4 +1,4 @@
-import type { useDispatch, useSelector } from "react-redux";
+import type { TypedUseSelectorHook, useDispatch } from "react-redux";
 import type { store } from "../store";
 
 export type AppDispatch = typeof store.dispatch;
@@ -8,9 +8,9 @@ export interface AppThunk<T = void> {
 }
 
 export interface RootState {
-  readonly starWars: {
-    readonly people: readonly Person[];
-    readonly starShips: readonly StarShip[];
+  starWars: {
+    people: Person[];
+    starShips: StarShip[];
   };
 }
 
@@ -56,4 +56,4 @@ export interface StarShip {
 
 export type UseAppDispatch = typeof useDispatch<AppDispatch>;
 
-export type UseAppSelector = typeof useSelector<RootState>;
+export type UseAppSelector = TypedUseSelectorHook<RootState>;
