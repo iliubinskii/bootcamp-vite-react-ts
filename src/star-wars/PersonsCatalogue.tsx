@@ -30,10 +30,12 @@ const PersonsCatalogue: React.FC<PersonsCatalogueProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="catalogue">
-      {people.map((person, index) => (
-        <PersonCard key={index} person={person} imageUrl={imageUrl} /> // Pass imageUrl and spread card props
-      ))}
+    <div className="p-5 flex flex-col items-center">
+      <div className="grid grid-cols-2 gap-5">
+        {people.map((person, index) => (
+          <PersonCard key={index} person={person} imageUrl={imageUrl} /> // Pass imageUrl and spread card props
+        ))}
+      </div>
     </div>
   );
 };

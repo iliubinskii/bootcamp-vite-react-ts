@@ -1,4 +1,5 @@
 import React from "react";
+import gravatar from "gravatar";
 
 export interface Person {
   birth_year: string;
@@ -37,10 +38,19 @@ const PersonCard: React.FC<PersonCardProps> = ({
     homeworld,
   },
 }) => {
+  const email = name.replace(/\s/gu, ".") + "@starwars.com";
+
+  const src = gravatar.url(email, {
+    s: "100",
+    d: "retro",
+  });
+
   return (
-    <div className="card bg-gray-900 border border-yellow-300 rounded-md min-w-96 min-h-48 max-w-md">
-      <img alt={name} className="card-image" />
-      <div className="card-info p-4 flex flex-col">
+    <div className="card bg-gray-900 border border-yellow-300 rounded-md min-w-96 min-h-48 max-w-md flex p-5 gap-5">
+      <div>
+        <img alt={name} src={src} className="card-image" />
+      </div>
+      <div className="card-info flex flex-col">
         <div className="info-text text-yellow-300">
           <h2>{name}</h2>
           <ul>
