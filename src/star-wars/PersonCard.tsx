@@ -41,19 +41,28 @@ const PersonCard: React.FC<PersonCardProps> = ({
   const email = name.replace(/\s/gu, ".") + "@starwars.com";
 
   const src = gravatar.url(email, {
-    s: "100",
+    s: "150",
     d: "retro",
   });
 
   return (
-    <div className="card bg-gray-900 border border-yellow-300 rounded-md min-w-96 min-h-48 max-w-md flex p-5 gap-5">
-      <div>
-        <img alt={name} src={src} className="card-image" />
+    <div className="card bg-gray-700 border border-yellow-300 rounded-md min-w-[600px] min-h-[60px] flex p-5 gap-5">
+      <div className="image-container">
+        <img
+          alt={name}
+          src={src}
+          className="object-cover h-full w-auto rounded-md"
+        />
       </div>
-      <div className="card-info flex flex-col">
-        <div className="info-text text-yellow-300">
-          <h2>{name}</h2>
-          <ul>
+      <div className="card-info flex flex-col text-left">
+        <div className="info-text text-yellow-300 font-sans">
+          {" "}
+          {/* Added font-sans for apple-system */}
+          <h2 className="text-white font-bold text-3xl">{name}</h2>{" "}
+          {/* Name with white text */}
+          <ul className="text-white">
+            {" "}
+            {/* Labels with gray text */}
             <li>Height: {height} cm</li>
             <li>Mass: {mass} kg</li>
             <li>Hair Color: {hair_color}</li>
@@ -70,17 +79,17 @@ const PersonCard: React.FC<PersonCardProps> = ({
               )}
             </li>
             {/* <li>
-              Films: {films.length > 0 ? films.join(', ') : 'None'}
-            </li>
-            <li>
-              Species: {species.length > 0 ? species.join(', ') : 'Unknown'}
-            </li>
-            <li>
-              Vehicles: {vehicles.length > 0 ? vehicles.join(', ') : 'None'}
-            </li>
-            <li>
-              Starships: {starships.length > 0 ? starships.join(', ') : 'None'}
-            </li> */}
+                Films: {films.length > 0 ? films.join(', ') : 'None'}
+              </li>
+              <li>
+                Species: {species.length > 0 ? species.join(', ') : 'Unknown'}
+              </li>
+              <li>
+                Vehicles: {vehicles.length > 0 ? vehicles.join(', ') : 'None'}
+              </li>
+              <li>
+                Starships: {starships.length > 0 ? starships.join(', ') : 'None'}
+              </li> */}
           </ul>
         </div>
       </div>
