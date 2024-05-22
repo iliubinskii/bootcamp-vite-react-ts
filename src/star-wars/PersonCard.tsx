@@ -26,17 +26,7 @@ interface PersonCardProps {
 }
 
 const PersonCard: React.FC<PersonCardProps> = ({
-  person: {
-    name,
-    height,
-    mass,
-    hair_color,
-    skin_color,
-    eye_color,
-    birth_year,
-    gender,
-    homeworld,
-  },
+  person: { name, height, mass, birth_year, gender },
 }) => {
   const email = name.replace(/\s/gu, ".") + "@starwars.com";
 
@@ -46,50 +36,53 @@ const PersonCard: React.FC<PersonCardProps> = ({
   });
 
   return (
-    <div className="card bg-gray-700 border border-yellow-300 rounded-md min-w-[600px] min-h-[60px] flex p-5 gap-5">
+    <div className="card rounded-md min-w-[600px] min-h-[300px] flex">
       <div className="image-container">
         <img
           alt={name}
           src={src}
-          className="object-cover h-full w-auto rounded-md"
+          className="object-cover h-full w-auto rounded-l-md"
         />
       </div>
-      <div className="card-info flex flex-col text-left">
-        <div className="info-text text-yellow-300 font-sans">
-          {" "}
-          {/* Added font-sans for apple-system */}
-          <h2 className="text-white font-bold text-3xl">{name}</h2>{" "}
-          {/* Name with white text */}
-          <ul className="text-white">
-            {" "}
-            {/* Labels with gray text */}
-            <li>Height: {height} cm</li>
-            <li>Mass: {mass} kg</li>
-            <li>Hair Color: {hair_color}</li>
-            <li>Skin Color: {skin_color}</li>
-            <li>Eye Color: {eye_color}</li>
-            <li>Birth Year: {birth_year}</li>
-            <li>Gender: {gender}</li>
+      <div className="card-info flex flex-col text-left pt-5 pl-4">
+        <div className="text-white">
+          <p className="card-title">{name}</p>
+          <div className="card-after-title flex items-center">
+            <span
+              className={`inline-flex rounded-full h-2 w-2 mr-2 ${
+                gender === "male"
+                  ? "bg-blue-500"
+                  : gender === "female"
+                  ? "bg-pink-500"
+                  : "bg-gray-400"
+              }`}
+            >
+              {/* Add content for the icon here, e.g., an SVG or Tailwind utility class */}
+            </span>
+            <p>Gender - {gender}</p>
+          </div>
+          <ul>
             <li>
-              Homeworld:{" "}
-              {homeworld && (
-                <a href={homeworld} target="_blank" rel="noreferrer">
-                  Link
-                </a>
-              )}
+              <span className="card-description">
+                Height:
+                <br />
+              </span>
+              {height} cm
             </li>
-            {/* <li>
-                Films: {films.length > 0 ? films.join(', ') : 'None'}
-              </li>
-              <li>
-                Species: {species.length > 0 ? species.join(', ') : 'Unknown'}
-              </li>
-              <li>
-                Vehicles: {vehicles.length > 0 ? vehicles.join(', ') : 'None'}
-              </li>
-              <li>
-                Starships: {starships.length > 0 ? starships.join(', ') : 'None'}
-              </li> */}
+            <li>
+              <span className="card-description">
+                Mass:
+                <br />
+              </span>
+              {mass} kg
+            </li>
+            <li>
+              <span className="text-gray-400">
+                Birth Year:
+                <br />
+              </span>
+              {birth_year}
+            </li>
           </ul>
         </div>
       </div>
