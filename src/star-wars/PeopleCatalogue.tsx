@@ -20,18 +20,18 @@ export interface Person {
   vehicles: string[];
 }
 
-interface PersonsCatalogueProps {
+interface PeopleCatalogueProps {
   people: Person[]; // Assuming your card data structure
   imageUrl: string; // Path to the image (from App.tsx)
 }
 
-const PersonsCatalogue: React.FC<PersonsCatalogueProps> = ({
+const PeopleCatalogue: React.FC<PeopleCatalogueProps> = ({
   people,
   imageUrl,
 }) => {
   return (
     <div className="p-5 flex flex-col items-center w-full">
-      <div className="flex flex-row flex-wrap gap-5">
+      <div className="flex flex-row flex-wrap gap-5 justify-center">
         {people.map((person, index) => (
           <PersonCard key={index} person={person} imageUrl={imageUrl} /> // Pass imageUrl and spread card props
         ))}
@@ -40,4 +40,4 @@ const PersonsCatalogue: React.FC<PersonsCatalogueProps> = ({
   );
 };
 
-export default PersonsCatalogue;
+export default PeopleCatalogue;

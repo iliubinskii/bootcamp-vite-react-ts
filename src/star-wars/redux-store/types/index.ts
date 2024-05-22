@@ -3,14 +3,16 @@ import type { store } from "../store";
 
 export type AppDispatch = typeof store.dispatch;
 
-export interface AppThunk<T = void> {
-  (): (dispatch: AppDispatch) => Promise<T>;
+export interface AppThunk<A extends unknown[] = [], T = void> {
+  (...args: A): (dispatch: AppDispatch) => Promise<T>;
 }
 
 export interface RootState {
   starWars: {
     people: Person[];
     starShips: StarShip[];
+    peopleNext?: string | undefined;
+    peoplePrev?: string | undefined;
   };
 }
 
