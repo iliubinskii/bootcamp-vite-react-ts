@@ -1,7 +1,7 @@
-import { AdminDashboard } from "./admin-dashboard"
+import { MuiApp } from "./mui";
 
 function App() {
-  return <AdminDashboard />
+  return <MuiApp />;
 }
 
-export default App
+export default App;
